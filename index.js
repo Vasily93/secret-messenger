@@ -1,6 +1,10 @@
 const form =  document.querySelector('form');
 form.addEventListener('submit', e => {
     e.preventDefault();
+
     const input = document.querySelector('input');
-    console.log(input.value)
+    const message = btoa(input.value); //Bit64 method
+    input.value = '';
+
+    document.getElementById('secureURL').value = message;
 })
