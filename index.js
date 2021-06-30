@@ -6,5 +6,6 @@ form.addEventListener('submit', e => {
     const message = btoa(input.value); //Bit64 method
     input.value = '';
 
-    document.getElementById('secureURL').value = message;
-})
+    document.getElementById('secureURL')
+        .value = `${window.location}#${message}`;
+});
